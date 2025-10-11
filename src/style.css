@@ -30,6 +30,7 @@ body {
     margin: 0;
     box-sizing: border-box;
     color: var(--white-font);
+    background-size: 100vw;
 }
 
 button {
@@ -74,30 +75,50 @@ nav button[selected] {
 
 
 #content {
-    width: 90%;
+    width: 80%;
     min-width: 400px;
     margin: 0 auto;
-    min-height: 80vh;
+    min-height: 90vh;
     border: 4px ridge var(--brown-border);
     border-radius: 6px;
+    padding: 3rem;
 
     background-color: var(--blue-background);
     backdrop-filter: blur(10px);
     overflow: hidden;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2em;
-    justify-items: center;
+
 }
 
+.food-section {
+    margin-bottom: 100px;
+}
+
+.food-section > h2 {
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
+    border-image: linear-gradient(
+        to right, transparent, var(--white-font), transparent
+    ) 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 460px);
+    grid-template-rows: repeat(auto-fit, 1fr);
+    column-gap: 2em;
+    row-gap: 1em;
+    justify-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+}
 
 .card {
     background-color: var(--dark-blue-background);
     padding: 1em;
     border-radius: 8px;
-    height: fit-content;
-    width: fit-content;
     display: grid;
     grid-template-columns: 74px auto;
     grid-template-rows: 74px auto;
@@ -131,14 +152,13 @@ nav button[selected] {
 }
 
 .card .description {
-    font-size: 1rem;
+    font-size: 0.8rem;
     background-image: linear-gradient(to right, rgba(5, 16, 18, 0.5), rgba(5, 16, 18, 0.5) 70%);
     grid-column: span 2;
     padding-bottom: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-height: 100px;
 }
 
 .card .price {
