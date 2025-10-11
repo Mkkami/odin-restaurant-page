@@ -30,7 +30,8 @@ body {
     margin: 0;
     box-sizing: border-box;
     color: var(--white-font);
-    background-size: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 button {
